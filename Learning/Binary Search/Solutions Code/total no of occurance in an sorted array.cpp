@@ -1,8 +1,8 @@
-#include<iostream>
-using namespace std;
-int leftIndex(vector<int>& nums, int target){
+class Solution {
+public:
+    int leftIndex(vector<int> nums, int target){
         int start = 0;
-        int end = nums.size();
+        int end = nums.size()-1;
         int mid = start + (end-start)/2;
         int result=-1;
         while(start <= end) {
@@ -11,7 +11,7 @@ int leftIndex(vector<int>& nums, int target){
             result= mid;
             end = mid-1;
         }
-        if(target > nums[mid]) {
+        else if(target > nums[mid]) {
             start = mid + 1;
         }
         else{
@@ -23,10 +23,10 @@ int leftIndex(vector<int>& nums, int target){
     return result;    
     }
     //Right Index
-    int rightIndex(vector<int>& nums, int target){
+    int rightIndex(vector<int> nums, int target){
         int start = 0;
-        int end = nums.size();
-        int mid = start + (end-start)/2;
+        int end = nums.size()-1;
+        int mid = (end+start)/2;
         int result=-1;
         while(start <= end) {
 
@@ -34,7 +34,7 @@ int leftIndex(vector<int>& nums, int target){
             result= mid;
             start = mid+1;
         }
-        if(target > nums[mid]) {
+       else if(target > nums[mid]) {
             start = mid + 1;
         }
         else{
@@ -45,30 +45,11 @@ int leftIndex(vector<int>& nums, int target){
     }
     return result;    
     }
-    vector<int> searchRange(vector<int>& nums, int target) {
-       vector<int> Answer;
+    int searchRange(vector<int>& nums, int target) {
         int LeftMost = leftIndex(nums,target);
-        Answer.push_back(LeftMost);
         int RightMost = rightIndex(nums,target);
-        Answer.push_back(RightMost);
-        return Answer;
+        int totalOccurances = (RightMost-LeftMost)+1;
+        return totalOccurances;
 
     }
-
-int main() { 
-
-    int even[6] = {2,4,6,8,12,18};
-    int odd[5] = {3, 8, 11, 14, 16};
-
-    int evenIndex = binarySearch(even, 6, 6);
-
-    cout << " Index of 6 is " << evenIndex << endl;
-
-    int oddIndex = binarySearch(odd, 5, 14);
-
-    cout << " Index of 14 is " << oddIndex << endl;
-
-
-    return 0;
-}
-
+};
