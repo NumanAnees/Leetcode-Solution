@@ -19,3 +19,11 @@ n square because `n(n-1)/2` as there are two for loops and in each outer iterati
 ## Inplace
 
 Space Complexity is O(1), Which is less than O(logn).
+
+## UseCase
+
+it is used when array size is small.
+
+## Best and Worst
+
+both are N square.
