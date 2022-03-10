@@ -33,19 +33,22 @@ Output for each test case is printed on a separate line.
 
 ### Constraints:
 
-````1 <= T <= 10
+````
+1 <= T <= 10
 0 <= M <= N <= 5*10^4
 -10^9 <= ARR[i] <= 10^9
+```
 
-Time Limit: 1 sec```
 ### Sample Input 1:
-```2
+```
+2
 6 3
 1 2 3 4 5 6
 5 2
-10 9 8 7 6```
+10 9 8 7 6
+```
 
 ### Sample Output 1:
 ```1 2 3 4 6 5
-10 9 8 6 7```
+10 9 8 6 7
 ````
