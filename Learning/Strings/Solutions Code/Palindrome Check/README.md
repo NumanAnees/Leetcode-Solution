@@ -23,4 +23,4 @@ Can you solve the problem using O(1) space complexity?
 
 # Solution
 
-We can not make any other vector or string. First make a function to convert all the upper case letter to lower case. Next step is to make decisions only if number is alphabets otherwise just increase or decrease the end and start.
+We can not make any other vector or string. First make a function to convert all the upper case letter to lower case. Next step is to make decisions only if numbers are alphabets otherwise just increase or decrease the end and start.

@@ -15,11 +15,11 @@ bool checkPalindrome(string s)
    int end = s.length()-1;
     while(start<end)
     {
-        if(!((s[start]>='a' && s[start]<='z' )|| (s[start]>='A' && s[start]<='Z')))
+        if(!((s[start]>='a' && s[start]<='z' )|| (s[start]>='A' && s[start]<='Z')||(s[end]>='0'&&s[end]<='9')))
         {
             start++;        	
         }
-       else if(!((s[end]>='a' && s[end]<='z' ) || (s[end]>='A' && s[end]<='Z')))
+       else if(!((s[end]>='a' && s[end]<='z' ) || (s[end]>='A' && s[end]<='Z')||(s[end]>='0'&&s[end]<='9')))
        {
 			end--;        	
         }
