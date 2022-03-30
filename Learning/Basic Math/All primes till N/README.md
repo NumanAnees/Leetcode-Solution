@@ -23,3 +23,6 @@ Use for loop and increment the **count** whenever you find a prime number.
   -- Assume that all the numbers between 2 and n are prime numbers.
   -- For first number **2** mark all numbers that are divided by 2 false(Not Prime).
   -- Move Counter to next number and repeat the step 2.
+
+## Time Complexity
+O(n*log(log(n)))
