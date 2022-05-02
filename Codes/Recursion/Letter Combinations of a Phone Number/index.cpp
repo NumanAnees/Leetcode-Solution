@@ -15,6 +15,7 @@ private:
         for(int i=0; i<value.length(); i++) {
             output.push_back(value[i]);
             solve(digit, output, index+1, ans, mapping);
+            //backtracking for getting original array
             output.pop_back();
         }
         
