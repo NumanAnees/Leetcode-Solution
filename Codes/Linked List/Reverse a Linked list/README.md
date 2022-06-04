@@ -1,6 +1,6 @@
 # Problem
 
-**https://www.codingninjas.com/codestudio/problems/reverse-the-singly-linked-list_799897**
+**https://leetcode.com/problems/reverse-linked-list/submissions/**
 
 # Solution
 

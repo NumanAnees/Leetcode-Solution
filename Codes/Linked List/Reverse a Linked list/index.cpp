@@ -1,11 +1,12 @@
-LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head) 
-{
-    if(head==NULL || head->next == NULL){
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        if(head==NULL || head->next == NULL){
 		return head;
 	}
-	LinkedListNode<int> *curr = head;
-	LinkedListNode<int> *prev = NULL;
-	LinkedListNode<int> *forward = NULL;
+	ListNode *curr = head;
+	ListNode *prev = NULL;
+	ListNode *forward = NULL;
 	while(curr!=NULL){
 		forward = curr->next;
 		curr->next = prev;
@@ -13,4 +14,5 @@ LinkedListNode<int> *reverseLinkedList(LinkedListNode<int> *head)
 		curr = forward;
 	}
 	return prev;
-}
+    }
+};
