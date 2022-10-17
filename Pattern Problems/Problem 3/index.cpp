@@ -2,22 +2,19 @@ class Solution {
   public:
     void printTriangle(int n) {
         //outer loop
-        for(int j=0;j<n;j++){
+        for(int j=1;j<=n;j++){
             //inner loop
-             for(int i=0;i<=j;i++)
+             for(int i=1;i<=j;i++)
              {
-                 cout<<"* ";
+                 cout<<i<<" ";
               } 
           cout<<endl;
-        }
-    }
+        }    }
 };
 
-
 # Problem
-
-* 
-* * 
-* * * 
-* * * * 
-* * * * *
+1
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5

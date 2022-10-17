@@ -12,3 +12,11 @@ void printSquare(int n) {
         }
     }
 };
+
+
+# Problem
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
