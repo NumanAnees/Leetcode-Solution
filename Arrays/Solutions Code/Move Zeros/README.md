@@ -15,3 +15,5 @@ Output: [1,3,12,0,0]
 # Solution
 
 Use two pointer approach and move non zero elements to the left.
+
+# Dry Run ...?
