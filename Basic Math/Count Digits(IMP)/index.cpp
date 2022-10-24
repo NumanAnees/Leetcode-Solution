@@ -13,6 +13,7 @@ public:
 return num;
     }
 };
+//-----Complexityy is 0(log N) not O(N)--------
 //Dry-Run
 //input 42
 //iteration 1 rem = 2 and temp becomes 4
