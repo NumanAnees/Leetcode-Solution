@@ -6,11 +6,12 @@ public:
         while(temp!=0){
             int rem=temp%10;
             temp=temp/10;
+            //rem is imp not temppppppp
             if(rem>0&&N%rem==0){
                 num++;
             }
         }
-return num;
+        return num;
     }
 };
 //-----Complexityy is 0(log N) not O(N)--------
