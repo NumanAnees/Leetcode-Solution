@@ -9,7 +9,7 @@
 class Solution
 {
 public:
-    ListNode *detectCycle(ListNode *head)
+    bool hasCycle(ListNode *head)
     {
         // Initialize pointers at head of linkedlist...
         ListNode *p1 = head, *p2 = head;
@@ -20,17 +20,8 @@ public:
             p2 = p2->next->next; // moving p2 by 2
             // found the cycle...
             if (p1 == p2)
-                break;
+                return true;
         }
-        // In case there is no cycle or no meeting point(check if any is false)...
-        if (!(p2 && p2->next))
-            return NULL;
-        // run loop until again head & p1 don't collab...
-        while (head != p1)
-        {
-            head = head->next; // moving head by 1...
-            p1 = p1->next;     // moving p1 by 1 as well...
-        }
-        return head; // Or return p1, they both will return the tail where cycle starts...
+        return false;
     }
 };
