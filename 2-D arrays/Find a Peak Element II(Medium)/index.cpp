@@ -7,7 +7,7 @@ public:
         int row = mat.size();
         int col = mat[0].size();
 
-        int i = 0, j = col - 1;
+        int i = 0, j = col - 1; // j can also be 0
 
         while (i >= 0 && i < row && j >= 0 && j < col)
         {
