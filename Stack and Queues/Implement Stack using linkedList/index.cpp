@@ -1,3 +1,4 @@
+
 //Function to push an integer into the stack.
 void MyStack ::push(int x) 
 {
