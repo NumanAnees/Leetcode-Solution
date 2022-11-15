@@ -66,7 +66,7 @@ public:
     void push(int x) {
      input.push(x);   
     }
-    
+    //-----------------Amortized analysis----------
     int pop() {
         if(!output.empty()){
             int n = output.top();
@@ -85,6 +85,7 @@ public:
         }
     }
     
+    //-----------------Amortized complexity-----
     int peek() {
         if(!output.empty()){
            return output.top();
