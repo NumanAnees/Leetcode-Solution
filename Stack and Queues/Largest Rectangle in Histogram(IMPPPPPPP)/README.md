@@ -7,6 +7,7 @@
 - Find the left smaller for each element and put in leftSmallArray.
 - Find the right smaller for each element and put in rightSmallArray.
 - Apply the formula for each and find max....
+- reference: **https://takeuforward.org/data-structure/area-of-largest-rectangle-in-histogram/**
 
 ## MySolution
 
