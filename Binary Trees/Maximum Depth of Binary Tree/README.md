@@ -13,3 +13,5 @@
 ## Space Complexity
 
 `O(N)`
+
+![image](https://user-images.githubusercontent.com/67089723/205366489-8c451e80-8c47-40e7-8ea0-1cfe88f46ec6.png)
