@@ -7,19 +7,21 @@ class Solution
     {
         vector<int> ans; 
         if(root == NULL) return ans; 
-        map<int,int> mpp; 
+        map<int,int> mpp; //Sorted map instead of unordered_map
         queue<pair<Node*, int>> q; 
         q.push({root, 0}); 
         while(!q.empty()) {
-            auto it = q.front(); 
+            // a simple way to declare a variable that has a complicated type
+            auto it = q.front(); //get topmost node...
             q.pop(); 
-            Node* node = it.first; 
-            int line = it.second; 
-            if(mpp.find(line) == mpp.end()) mpp[line] = node->data; 
-            
+            Node* node = it.first; //get node
+            int line = it.second;  //get line number
+            if(mpp.find(line) == mpp.end()) mpp[line] = node->data; //ensure line does not exist in map and add 
+            //move left and decrement the vertical line number
             if(node->left != NULL) {
                 q.push({node->left, line-1}); 
             }
+            //move right and decrement the vertical line number
             if(node->right != NULL) {
                 q.push({node->right, line + 1}); 
             }
