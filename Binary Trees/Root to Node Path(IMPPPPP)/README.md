@@ -16,6 +16,14 @@ The algorithm steps can be stated as follows:
 - If not, then we recursively call its left and right child to find the target node V. If any one of them returns true, it means we have found node V at lower levels and return true from the current function.
 - If the value is not found at the current node and neither in any of the recursive calls, it means that the value is not present in the current sub-tree, therefore we pop out the current node from the path list and return false.
 
+## TC
+
+`O(n) inOrder traversal`
+
+## SC
+
+`O(H) stack space`
+
 ## Video
 
 https://www.youtube.com/watch?v=fmflMqVOC7k
