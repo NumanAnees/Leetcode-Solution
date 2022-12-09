@@ -2,6 +2,10 @@
 
 https://leetcode.com/problems/single-element-in-a-sorted-array/
 
+## NOTEEEEEEEE
+
+**if right part is even the left is also even and vice versa.**
+
 ## Solution
 
 ```
