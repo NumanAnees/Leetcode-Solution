@@ -20,9 +20,9 @@ Space Complexity is O(1), Which is less than O(logn).
 
 ## UseCase
 
-Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+Insertion sort is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on `large lists` than more advanced algorithms such as quicksort, heapsort, or merge sort.
 
 ## Best and Worst
 
-Best: O(n)
+Best: O(n) `when almost sorted list.`
 Worst: n square
