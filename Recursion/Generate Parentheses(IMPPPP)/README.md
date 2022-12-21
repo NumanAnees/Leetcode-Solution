@@ -10,3 +10,5 @@ https://leetcode.com/problems/generate-parentheses/
 - If open == 0 stop there, as opening parenthesis are exhausted
 - If open < close, it means some of open are used so only now we can close
 - If open == close == 0 then no more parenthesis left so add the string to ans vector and return
+
+![del](https://user-images.githubusercontent.com/67089723/208941121-fcb2cabf-7ff0-43d9-a07b-c95eef5bc7bb.jpeg)
