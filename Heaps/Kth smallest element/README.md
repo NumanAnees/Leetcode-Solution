@@ -4,8 +4,8 @@ https://practice.geeksforgeeks.org/problems/kth-smallest-element5635/1?utm_sourc
 
 ## Solution
 
-- For finding kth smalles use maxHeap which is priority_queue.
-- Create a k size maxheap of k small elements. As root is largest in maxheap so we can say that k smalles is at root.
+- For finding kth smallest use maxHeap which is `priority_queue<int>`.
+- Create a k size maxheap of k small elements. As root is largest in maxheap so we can say that kth smallest is at root.
 
 ## TC
 
