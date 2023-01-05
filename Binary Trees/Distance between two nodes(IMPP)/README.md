@@ -17,3 +17,5 @@ In case of a skew tree.
 
 $O(N)$
 Recursion stack space in case of a skew tree.
+
+https://www.youtube.com/watch?v=6DraIPN_0no
