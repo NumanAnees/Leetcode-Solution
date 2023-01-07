@@ -3,7 +3,7 @@
 Contains practice questions of Data Structures, Algorithms and SQL for Interview Preparation from various platforms.
 
 - [Arrays](./Arrays)
-- [2-D arrays](./2-D arrays)
+- [2-D arrays](./2-D%20arrays)
 - [Basic Math](./Basic Math)
 - [Binary Search](./Binary Search)
 - [BST](./Binary Search Trees)
