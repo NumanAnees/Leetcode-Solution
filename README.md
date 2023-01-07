@@ -1,1 +1,25 @@
+# Interview Preparation
 
+Contains practice questions of Data Structures, Algorithms and SQL for Interview Preparation from various platforms.
+
+- [Arrays](./Arrays)
+- [2-D arrays](./2-D arrays)
+- [Basic Math](./Basic Math)
+- [Binary Search](./Binary Search)
+- [BST](./Binary Search Trees)
+- [Binary Trees](./Binary Trees)
+- [Dynamic Programming](./Dynamic Programming)
+- [Graphs](./Graphs)
+- [Greedy Algorithms](./Greedy Algorithms)
+- [Hashmap](./Hashmap)
+- [Heaps](./Heaps)
+- [Linked List](./Linked List)
+- [Pattern Problems](./Pattern Problems)
+- [Pointers](./Pointers)
+- [Prefix-Postfix](./Prefix-Postfix)
+- [Random Stuff](./Random Stuff)
+- [Recursion](./Recursion)
+- [Sorting](./Sorting)
+- [Stack and Queues](./Stack and Queues)
+- [Strings](./Strings)
+- [Two Pointer & Sliding Window](./Two Pointer & Sliding Window)
