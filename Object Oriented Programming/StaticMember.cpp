@@ -5,7 +5,7 @@ using namespace std;
 class Human{
 public:
     static int human_count;
-    int test=8;
+    int test=10;
     string s="world";
 
     Human(){
@@ -17,6 +17,7 @@ public:
     }
 
     static void humanCount(Human h){
+        h.test = 11;
      cout << "There are "<<h.test<<" peoples are in this program " <<endl;
     }
     void display(){

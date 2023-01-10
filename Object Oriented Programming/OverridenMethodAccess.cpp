@@ -14,7 +14,7 @@ class Student : public Person{
 public:
     void introduce(){
     cout << "hi i am a student and i am awesome"<<endl;
-    Person::introduce();
+    Person::introduce(); //way to call base class func using scope resolution operator...
     }
 
 };
