@@ -44,7 +44,7 @@ class babyTiger : public Tiger{
 
 
 int main(){
-    Animal a;
+    babyTiger a;
     a.intro();
     
     return 0;
