@@ -4,6 +4,8 @@ https://leetcode.com/problems/jump-game-ii
 
 ## Solution
 
+https://www.youtube.com/watch?v=Yrw3MNh_368
+
 ## Dry Run
 
 `input = [2,3,1,1,4]`
