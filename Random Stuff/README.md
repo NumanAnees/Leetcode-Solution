@@ -87,3 +87,29 @@ Ans: In Java, the final keyword can be used to indicate that something cannot be
 Q15: void pointers?
 Ans: A void pointer is a pointer that has no associated data type with it. A void pointer can hold address of any type and can be typecasted to any type.
 ```
+
+```
+Q16: Swap 2 numbers without using any extra space?
+Ans:
+    int x = 10, y = 5;
+    // Code to swap 'x' and 'y'
+    x = x + y; // x now becomes 15
+    y = x - y; // y becomes 10
+    x = x - y; // x becomes 5
+```
+
+```
+Q17: How to check if number is prime or not?
+Ans:   // 0 and 1 are not prime numbers
+  if (n == 0 || n == 1) {
+    is_prime = false;
+  }
+
+  // loop to check if n is prime
+  for (i = 2; i <= n/2; ++i) {
+    if (n % i == 0) {
+      is_prime = false;
+      break;
+    }
+  }
+```
