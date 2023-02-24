@@ -19,8 +19,8 @@ public:
         int minProfit = INT_MAX;
         int maxProfit = 0;
         for (auto &val : prices) {
-            minProfit = min(val, minProfit);
-            maxProfit = max((val - minProfit), maxProfit);
+            minProfit = min(val, minProfit);//buy
+            maxProfit = max((val - minProfit), maxProfit);//sell
         }
         return maxProfit;
     }
