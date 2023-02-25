@@ -27,3 +27,25 @@ public:
      return ans[k-1];
     }
 };
+//==================================Space optimized============================================
+class Solution {
+public:
+//Declare ans arr...
+int var;
+//declare func with return type void...
+void InOrder(TreeNode *node,int &k){
+        if(node==NULL){
+            return;
+        }
+        InOrder(node->left,k);
+        if(--k==0){
+            var=node->val;//because root at middle,we assume curr is root
+        }
+        InOrder(node->right,k);
+        
+    }
+int kthSmallest(TreeNode* root, int k) {
+     InOrder(root,k);
+     return var;
+    }
+};
