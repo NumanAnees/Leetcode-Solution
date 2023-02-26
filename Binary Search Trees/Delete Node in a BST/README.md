@@ -4,6 +4,6 @@ https://leetcode.com/problems/delete-node-in-a-bst/
 
 ## Solution
 
-- Find the target node but stop on it's parent.
-- call helper function in a way the parent 's new left/right is target node 's left/right.
-- cut connection of right part and place it in the lastRight part of left.
+- Find the target node.
+- return left if right is null and right if left is null.
+- if both present replace root->data with the leftmost child of right subtree and then delete that duplicat child because it is easy to delete a leaf node.

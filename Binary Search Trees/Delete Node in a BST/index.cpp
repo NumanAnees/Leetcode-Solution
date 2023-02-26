@@ -1,63 +1,33 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
 class Solution {
+private:
+    int minValue(TreeNode* root){
+        int minv=root->val;//store before hand....
+        while(root->left!=NULL){
+            minv=root->left->val;
+            root=root->left;
+        }
+        //when fails root->left will be null but min store last node value not null...
+        return minv;
+    }
 public:
     TreeNode* deleteNode(TreeNode* root, int key) {
         if(root==NULL){
             return root;
         }
-        if(root->val==key)
-        {
-            return helper(root); //no dummy return new root directly...
+        if(key<root->val)
+            root->left=deleteNode(root->left,key);
+        else if(key>root->val)
+            root->right=deleteNode(root->right,key);
+        else{ //value matches....
+            if(root->left==NULL)
+                return root->right;//if both NULL return right==NULL from here....
+            else if(root->right==NULL)
+                return root->left;
+            //case when both sub trees present...
+            root->val=minValue(root->right);//find minimum from right side and replace then delete that duplicate from right side.....
+            root->right=deleteNode(root->right,root->val);//remove duplicate
         }
-        TreeNode *dummy = root;
-        while(root!=NULL){
-            if(key<root->val){
-                if(root->left!=NULL && root->left->val==key){
-                    root->left = helper(root->left);//new left node
-                    break;
-                }
-                else{
-                    root=root->left;//move root to next
-                }
-            }else{
-                if(root->right!=NULL && root->right->val==key){
-                    root->right=helper(root->right);//new right node
-                    break;
-                }
-                else{
-                    root=root->right;//move root to next
-                }
-            }
-        }
-        return dummy;
-    }
-    TreeNode* helper(TreeNode *root){
-        if(root->left==NULL){
-            return root->right;//no left then right is root...
-        }
-        else if(root->right==NULL){
-            return root->left;//no right then left is root...
-        }
-        //if both present.....
-        TreeNode *rightChild = root->right;
-        TreeNode *lastRightOFLeft = findLastRightOFLeft(root->left);
-        lastRightOFLeft->right=rightChild;//adding right part to lastRight 's right because greater....
-        return root->left;//left is placed on deleted node...
-    }
-    TreeNode* findLastRightOFLeft(TreeNode *root){
-        if(root->right==NULL){
-            return root;
-        }
-      return findLastRightOFLeft(root->right);
+        //all calls complete return the king root
+        return root;
     }
 };

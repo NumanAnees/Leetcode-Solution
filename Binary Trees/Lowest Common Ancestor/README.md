@@ -18,3 +18,7 @@ Use DFS traversal(Recursive DFS InOrder traversal) first go to left and then go 
 ## SC
 
 `O(n) Auxilary stack space worst case`
+
+## Follow up
+
+What if same value node?

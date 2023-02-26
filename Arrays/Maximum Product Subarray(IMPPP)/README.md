@@ -2,6 +2,8 @@
 
 https://leetcode.com/problems/maximum-product-subarray/
 
+https://practice.geeksforgeeks.org/problems/maximum-product-subarray3604/1?utm_source=geeksforgeeks&utm_medium=article_practice_tab&utm_campaign=article_practice_tab
+
 ## Solution
 
 Like kadane's algorithm we calculate the max ending here at each index;
