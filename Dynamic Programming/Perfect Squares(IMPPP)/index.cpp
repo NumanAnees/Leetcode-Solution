@@ -10,7 +10,8 @@ public:
                  int rem = i-j*j;//for n=10 n-1*1==9
                  if(dp[rem]<min){
                      min=dp[rem]; //update min
-                 }                 
+                 }       
+                //  mini=min(dp[rem],mini);         
              }
             dp[i] = min+1; //final....
         }
