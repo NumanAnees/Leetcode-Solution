@@ -11,7 +11,8 @@
     "initializer_list": "cpp",
     "stacktrace": "cpp",
     "regex": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "unordered_map": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

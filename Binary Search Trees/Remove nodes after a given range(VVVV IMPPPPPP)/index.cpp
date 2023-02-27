@@ -45,7 +45,7 @@ Node* insert(Node* root, int key)
  
 // Function to truncate the BST and remove nodes having keys
 // outside the valid range
-Node* truncate(Node* root, int low, int high)
+Node* truncate(Node* root, int low, int high)//post order traversallllllllllllllllllll
 {
     // base case
     if (root == nullptr) {
@@ -61,13 +61,13 @@ Node* truncate(Node* root, int low, int high)
     // if the root's key is smaller than the minimum allowed, delete it
     if (root->data < low)
     {
-        root = root->right;
+        root = root->right;//we want large values which are on right side
         delete curr;
     }
     // if the root's key is larger than the maximum allowed, delete it
     else if (root->data > high)
     {
-        root = root->left;
+        root = root->left;//we want small values which are on left side
         delete curr;
     }
  

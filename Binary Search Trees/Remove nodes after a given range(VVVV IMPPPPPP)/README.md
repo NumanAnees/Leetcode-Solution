@@ -15,3 +15,5 @@ The idea is simple – traverse the tree in a bottom-up fashion and truncate the
 - If its key falls within the valid range, nothing needs to be done.
 - If the root’s key is smaller than the minimum allowed, remove it and set the root to its right child.
 - If the root’s key is larger than the maximum allowed, remove it and set the root to its left child.
+
+- **If smaller then we dont want left subtree vice versa.**
