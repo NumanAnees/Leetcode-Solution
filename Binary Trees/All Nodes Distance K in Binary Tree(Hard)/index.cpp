@@ -6,7 +6,8 @@ public:
         queue<TreeNode*> queue;
         queue.push(root);
         while(!queue.empty()) { /*First BFS to get a track of parent nodes*/
-            TreeNode* current = queue.front(); queue.pop();
+            TreeNode* current = queue.front(); 
+            queue.pop();
             if(current->left) {
                 parent_track[current->left] = current;
                 queue.push(current->left);
