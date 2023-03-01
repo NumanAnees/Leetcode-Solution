@@ -11,4 +11,4 @@ https://practice.geeksforgeeks.org/problems/count-pairs-with-given-sum5022/1
 ## Note
 
 for non repeating values in array use count++;
-for repeating values in array use count += m[k - arr[i]]; or multiply 2(dist pairs).
+for repeating values in array use count += m[k - arr[i]]; or multiply 2(non repeating values 's pairs).

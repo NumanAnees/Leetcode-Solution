@@ -36,7 +36,7 @@ bool subsetSumToK(int n, int k, vector<int> &arr) {
     //target 0 then we don't care about index return true...
     for(int i=0;i<n;i++) dp[i][0] = true;
     //if index is last only make arr[0] true.... means in row wise target=arr[0]
-    dp[0][arr[0]] = true;
+    if(arr[0]<=k) dp[0][arr[0]] = true;//because k can be 50 and arr[0]=99
     for(int index=1;index<n;index++){//0 already solved
         for(int target=1;target<=k;target++){
             //copy paste reccurence....
