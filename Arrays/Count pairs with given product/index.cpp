@@ -15,7 +15,7 @@ int getPairsCount(int arr[], int n, int k)
 			cout<<arr[i]<<endl;
 			count++;
 		}
-		m[arr[i]]++;
+		m[arr[i]]++; //no else here....
 	}
 	return count;
 }

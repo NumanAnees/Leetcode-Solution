@@ -6,7 +6,8 @@ public:
         int opened = 0;
         for (char c : S) {
             if (c == '(' && opened++ > 0) res += c;
-            if (c == ')' && opened-- > 1) res += c;
+            if (c == ')' && opened-- > 1) res += c; //remember 1 here....
+            //automatically ignores outer...
         }
         return res;
     }

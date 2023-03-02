@@ -54,6 +54,7 @@ public:
     }
     
     //If not empty string then add to the result(Last word is added)
+    //last k baad no space
     if (temp!="") {
         if (ans!="") ans = temp + " " + ans;
         else ans = temp;

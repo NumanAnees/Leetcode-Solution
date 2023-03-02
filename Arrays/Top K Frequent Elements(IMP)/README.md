@@ -9,6 +9,8 @@
 - Step2: we have to find k large values not kth largest so do not sort the hashmap bcoz of complexity O(nlogn).
 - Step3: instead sorting find largest and change its count to 0 and decrease the k--....
 
+- can also do this using an unordered_map and a ordered_map
+
 #### Time Complexity
 
 - O(k\*n)

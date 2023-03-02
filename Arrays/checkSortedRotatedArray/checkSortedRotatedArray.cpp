@@ -7,7 +7,7 @@ public:
             if(nums[i] < nums[i-1])
                 cnt++;
         }
-        if(nums[nums.size()-1] > nums[0])
+        if(nums[nums.size()-1] > nums[0]) //if start is lesser than end
             cnt++;
         
         return cnt<=1;

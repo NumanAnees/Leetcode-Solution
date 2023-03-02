@@ -9,7 +9,7 @@ public:
                     // cout<<arr[i]<<endl;
 			        // count++; //when non repeating
                 }
-                m[arr[i]]++;
+                m[arr[i]]++; //no else here....
             }
             return count;
     }
