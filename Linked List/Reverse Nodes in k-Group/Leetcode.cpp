@@ -6,30 +6,30 @@ public:
             return NULL;
         }
     //Step1:reverse k nodes first
-        ListNode* next = NULL;
+        ListNode* forward = NULL;
         ListNode* curr = head;
         ListNode* prev = NULL;
         int count = 0;
         while(curr!=NULL && count<k)
         {
-            next=curr->next;
+            forward=curr->next;
             curr->next = prev;
             prev=curr;
-            curr= next;
+            curr= forward;
             count++;
         }
     //Step2: Use Recursion and check if k nodes exists or not
         int i=1;
-        ListNode* now = next;
+        ListNode* now = forward;
         while (now!=NULL && i<k){
             now=now->next;
             i++;
         }
         if (now==NULL){
-            head->next = next;
+            head->next = forward;
         }
         else{
-            head->next = reverseKGroup(next,k);
+            head->next = reverseKGroup(forward,k);
         }
     //Step3: Return head of reversed list
         return prev;
