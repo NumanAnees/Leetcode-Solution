@@ -1,15 +1,4 @@
-#include<iostream>
-#include<vector>
-using namespace std;
-void print(vector<vector<int>> output){
-  for(int i = 0; i < output.size(); i++){
-    cout << "[ ";
-    for(int j = 0; j < output[i].size(); j++){
-      cout << output[i][j] << ", "; 
-    }
-    cout << "]" << endl;
-  }
-}
+
 
 void print_all_sum_rec(
     int target,

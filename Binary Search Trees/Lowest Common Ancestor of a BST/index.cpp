@@ -1,42 +1,24 @@
 class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q)    {
-    //if p>q then swap...
-    if(p->val>q->val) swap(p,q);
-    TreeNode* tempP=p;
-    TreeNode* tempQ=q;
-    TreeNode* tempRoot=root;
-    //check if p is parent of q...
-    while(tempP!=NULL){
-        if(tempP->val==q->val) return p;
-        else if(q->val>tempP->val){
-            tempP=tempP->right;
+          //---------inOrder Traversal----------------
+        //base case
+        //in all case return root because for case 1 root==NULL,case 2 and 3 root==p or q....
+        if (root == NULL || root == p || root == q) {
+            return root;
         }
-        else{
-            tempP=tempP->left;
+        TreeNode* left = lowestCommonAncestor(root->left, p, q);
+        TreeNode* right = lowestCommonAncestor(root->right, p, q);
+
+        //result
+        if(left == NULL) {
+            return right;
         }
-    }
-    //check if q is parent of q...
-    while(tempQ!=NULL){
-        if(tempQ->val==p->val) return q;
-        else if(p->val>tempQ->val){
-            tempQ=tempQ->right;
+        else if(right == NULL) {
+            return left;
         }
-        else{
-            tempQ=tempQ->left;
+        else { //both left and right are not null, we found our result
+            return root;
         }
-    }
-    //if no one is parent then find a node with value n>p and n<q as we know it is BST.
-    //we already handled the parent case now we are sure p->val < q->val.
-    while(tempRoot!=NULL){
-        if(tempRoot->val>p->val && tempRoot->val<q->val) return tempRoot;
-        else if(tempRoot->val<p->val){
-            tempRoot=tempRoot->right;
-        }
-        else{
-            tempRoot=tempRoot->left;
-        }
-    } 
-    return NULL;
-    }
+     }
 };

@@ -24,3 +24,4 @@ public:
         return ans;
     }
 };
+//can also do this using an unordered_map and a ordered_map

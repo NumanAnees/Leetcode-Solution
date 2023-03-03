@@ -11,6 +11,7 @@ void solve(vector<string>& ans, string str, string output, int i) {
     //include
     output.push_back(str[i]);
     solve(ans, str, output, i+1);
+    output.pop_back();
 }
 vector<string> subsequences(string str){
 	vector<string> ans;
