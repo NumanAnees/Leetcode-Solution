@@ -1,3 +1,4 @@
+//-------------------------------------Old appoach striver-------------------------------
 class Solution {
 public:
     void sortColors(vector<int>& nums) {
@@ -16,5 +17,34 @@ public:
                 
         }
      }
+    }
+};
+//===============================Why not this best approach?=============================
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int ones=0,twos=0,zeros=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]==0)
+                zeros++;
+            if(nums[i]==1)
+                ones++;
+            if(nums[i]==2)
+                twos++;
+        }
+        for(int i=0;i<nums.size();i++){
+            if(zeros){
+                nums[i]=0;                
+                zeros--;
+            }
+            else if(ones){
+                nums[i]=1;
+                ones--;
+            }
+            else if(twos){
+                nums[i]=2;                
+                twos--;
+            }
+        }
     }
 };
