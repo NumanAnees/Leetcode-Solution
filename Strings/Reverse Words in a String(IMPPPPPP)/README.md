@@ -10,3 +10,10 @@
 - If it’s empty, it indicates that this is the last word we need to print, and hence, there shouldn’t be any space after this word.
 - if not empty then add the temp variable and space before our output variable.
 - The post condition checking whether temp is empty at the end of loop is very important because if no space at end we will miss `last word`........
+
+## Educative Simple version
+
+We will follow two steps:
+
+- Reverse the string.
+- Traverse the string and reverse each word in place.
