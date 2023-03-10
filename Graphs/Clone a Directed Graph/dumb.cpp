@@ -1,6 +1,3 @@
-// C++ program to clone a directed acyclic graph.
-#include <bits/stdc++.h>
-using namespace std;
 
 // Class to create a new graph node
 class Node
@@ -18,42 +15,6 @@ class Node
 			this->key = key;
 		}
 };
-
-// Function to print a graph,
-// depth-wise, recursively
-void printGraph(Node *startNode,
-				vector<bool> &visited)
-{
-	
-	// Visit only those nodes who have any
-	// neighboring nodes to be traversed
-	if (!startNode->adj.empty())
-	{
-		
-		// Loop through the neighboring nodes
-		// of this node. If source node not already
-		// visited, print edge from source to
-		// neighboring nodes. After visiting all
-		// neighbors of source node, mark its visited
-		// flag to true
-		for(auto i : startNode->adj)
-		{
-			if (!visited[startNode->key])
-			{
-				cout << "edge " << startNode
-					<< "-" << i
-					<< ":" << startNode->key
-					<< "-" << i->key
-					<< endl;
-				if (!visited[i->key])
-				{
-					printGraph(i, visited);
-					visited[i->key] = true;
-				}
-			}
-		}
-	}
-}
 
 // Function to clone a graph. To do this, we
 // start reading the original graph depth-wise,
@@ -93,41 +54,3 @@ Node *cloneGraph(Node *oldSource,
 	}
 	return newSource;
 }
-
-// Driver Code
-int main()
-{
-	Node *n0 = new Node(0);
-	Node *n1 = new Node(1);
-	Node *n2 = new Node(2);
-	Node *n3 = new Node(3);
-	Node *n4 = new Node(4);
-	
-	n0->adj.push_back(n1);
-	n0->adj.push_back(n2);
-	n1->adj.push_back(n2);
-	n1->adj.push_back(n3);
-	n1->adj.push_back(n4);
-	n2->adj.push_back(n3);
-	n3->adj.push_back(n4);
-	
-	// Flag to check if a node is already visited.
-	// Stops indefinite looping during recursion
-	vector<bool> visited(5, false);
-	cout << "Graph Before Cloning:-\n";
-	printGraph(n0, visited);
-	visited = { false, false, false, false, false };
-	
-	cout << "\nGraph Before Starts:-\n";
-	Node *clonedGraphHead = cloneGraph(
-		n0, new Node(n0->key), visited);
-	cout << "Cloning Process Completes.\n";
-	
-	visited = { false, false, false, false, false };
-	cout << "\nGraph After Cloning:-\n";
-	printGraph(clonedGraphHead, visited);
-	
-	return 0;
-}
-
-// This code is contributed by sanjeev2552

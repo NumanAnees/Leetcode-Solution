@@ -21,5 +21,3 @@ public:
     }
 };
 
-//O(n*m) : TC
-//O(n*m) : SC because of recursive calls
