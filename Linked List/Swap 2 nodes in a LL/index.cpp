@@ -1,23 +1,58 @@
-void swapNodes(Node** head_ref, int x, int y)
-{
-    // Nothing to do if x and y are same
-    if (x == y)
-        return;
-    Node **a = NULL, **b = NULL;
-    // search for x and y in the linked list
-    // and store their pointer in a and b
-    while (*head_ref) {
-        if ((*head_ref)->data == x)
-            a = head_ref;
-        else if ((*head_ref)->data == y)
-            b = head_ref;
-        head_ref = &((*head_ref)->next);
+
+// The function to swap two nodes in a linked list
+ListNode* swapNodes(ListNode* head, int x, int y) {
+    // If the two values are the same, there is nothing to swap
+    if (x == y) {
+        return head;
     }
-    // if we have found both a and b
-    // in the linked list swap current
-    // pointer and next pointer of these
-    if (a && b) {
-        swap(*a, *b);
-        swap(((*a)->next), ((*b)->next));
+
+    // Create a dummy node that will always point to the head of the list
+    ListNode dummy(0);
+    dummy.next = head;
+
+    // Initialize pointers to the nodes we want to swap and their previous nodes
+    ListNode* prevX = &dummy;
+    ListNode* prevY = &dummy;
+    ListNode* curr = head;
+
+    // Traverse the linked list to find the nodes we want to swap and their previous nodes
+    while (curr) {
+        if (curr->val == x) {
+            prevX = curr;
+        } else if (curr->val == y) {
+            prevY = curr;
+        }
+        curr = curr->next;
     }
+
+    // If either of the nodes is not found or the values of x and y are the same, return the original linked list
+    if (prevX == &dummy || prevY == &dummy) {
+        return head;
+    }
+
+    // Initialize pointers to the nodes that come before and after the nodes we want to swap
+    ListNode* nodeX = prevX->next;
+    ListNode* nodeY = prevY->next;
+    ListNode* nextX = nodeX->next;
+    ListNode* nextY = nodeY->next;
+
+    // Swap the nodes by adjusting the next pointers
+    if (nextX == nodeY) { // If the two nodes are adjacent
+        prevX->next = nodeY;
+        nodeY->next = nodeX;
+        nodeX->next = nextY;
+    } else if (nextY == nodeX) { // If the two nodes are adjacent
+        prevY->next = nodeX;
+        nodeX->next = nodeY;
+        nodeY->next = nextX;
+    } else { // If the two nodes are not adjacent
+        prevX->next = nodeY;
+        nodeY->next = nextX;
+        prevY->next = nodeX;
+        nodeX->next = nextY;
+    }
+
+    // Return the new head of the linked list
+    return dummy.next;
 }
+
