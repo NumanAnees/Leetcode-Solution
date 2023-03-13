@@ -11,14 +11,14 @@ class Solution
         distance[S] = 0;
         while(!pq.empty())
         {
-            int weight{pq.top().first};
-            int node{pq.top().second};
+            int weight = pq.top().first;
+            int node = pq.top().second;
             pq.pop();
             for(auto it : adj[node])
             {
-                int nNode{it[0]};
-                int nWeight{it[1]};
-                int currWeight{weight + nWeight};
+                int nNode=it[0];
+                int nWeight=it[1];
+                int currWeight=weight + nWeight;
                 if(distance[nNode] > currWeight)
                 {
                     distance[nNode] = currWeight;

@@ -1,0 +1,53 @@
+/*
+// Definition for a Node.
+class Node {
+public:
+    int val;
+    Node* next;
+    Node* random;
+    
+    Node(int _val) {
+        val = _val;
+        next = NULL;
+        random = NULL;
+    }
+};
+*/
+
+class Solution {
+public:
+    Node* copyRandomList(Node* head) {
+        
+        // this map points to the clone of the original node
+        unordered_map<Node*,Node*> umap;
+        
+        Node* temp=head;
+        
+        // 1st Pass - Creation of Nodes and no wiring
+        while(temp!=NULL)
+        {
+            // Pointing the original node to its clone node
+            // Now I can access the clone node in O(1)
+            umap[temp] = new Node(temp->val);
+            temp=temp->next;
+            
+        }
+        
+        // 2nd pass - Filling the next and random pointers
+        temp=head;
+        
+        while(temp!=NULL)
+        {
+            // umap[ptr] is the clone node and its next is the next original
+            // node's clone node. 
+            // umap[ptr->next] refers to the clone node of ptr->next;
+            umap[temp]->next= umap[temp->next]; 
+            
+            // similar thing for the random pointer
+            umap[temp]->random=umap[temp->random];
+            
+            temp=temp->next;
+        }
+        return umap[head];   
+    }
+};

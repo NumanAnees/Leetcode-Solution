@@ -5,7 +5,7 @@ class Solution
     //be performed in a meeting room.
     int maxMeetings(int start[], int end[], int n)
     {
-        int count=1;
+        int count=1; //not 0 bcoz first activity
         vector<pair<int,int>> vec;
         for(int i=0;i<n;i++){
             vec.push_back({end[i],start[i]}); //push in pair {end,start}....
