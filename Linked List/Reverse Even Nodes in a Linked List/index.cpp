@@ -1,76 +1,66 @@
-#include <iostream>
-using namespace std;
+// C++ program for the above approach
 
-struct ListNode {
-    int val;
-    ListNode* next;
+// Function to reverse all the even
+// positioned node of given linked list
+Node* reverse_even(Node* A)
+{
+	// Stores the nodes with
+	// even positions
+	Node* even = NULL;
 
-    ListNode(int v) : val(v), next(nullptr) {}
-};
+	// Stores the nodes with
+	// odd positions
+	Node* odd = A;
 
-ListNode* reverseEvenNodes(ListNode* head) {
-    if (!head || !head->next) {
-        return head;
-    }
+	// If size of list is less that
+	// 3, no change is required
+	if (!odd || !odd->next || !odd->next->next)
+		return odd;
 
-    ListNode dummy(0);
-    dummy.next = head;
-    ListNode* prev = &dummy;
-    ListNode* curr = head;
-    int pos = 1;
+	// Loop to traverse the list
+	while (odd && odd->next) {
 
-    while (curr) {
-        if (pos % 2 == 0) {
-            ListNode* next = curr->next;
-            ListNode* evenTail = prev->next;
-            prev->next = reverseList(curr);
-            evenTail->next = next;
-            curr = evenTail;
-        }
-        prev = curr;
-        curr = curr->next;
-        pos++;
-    }
+		// Store the even positioned
+		// node in temp
+		Node* temp = odd->next;
+		odd->next = temp->next;
 
-    return dummy.next;
+		// Add the even node to the
+		// beginning of even list
+		temp->next = even;
+
+		// Make temp as new even list
+		even = temp;
+
+		// Move odd to it's next node
+		odd = odd->next;
+	}
+
+	odd = A;
+
+	// Merge the evenlist into
+	// odd list alternatively
+	while (even) {
+
+		// Stores the even's next
+		// node in temp
+		Node* temp = even->next;
+
+		// Link the next odd node
+		// to next of even node
+		even->next = odd->next;
+
+		// Link even to next odd node
+		odd->next = even;
+
+		// Make new even as temp node
+		even = temp;
+
+		// Move odd to it's 2nd next node
+		odd = odd->next->next;
+	}
+
+	return A;
 }
 
-ListNode* reverseList(ListNode* head) {
-    ListNode* prev = nullptr;
-    ListNode* curr = head;
-    while (curr) {
-        ListNode* next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
-}
 
-void printList(ListNode* head) {
-    ListNode* curr = head;
-    while (curr) {
-        cout << curr->val << " -> ";
-        curr = curr->next;
-    }
-    cout << "nullptr" << endl;
-}
-
-int main() {
-    // Construct the following linked list: 1 -> 2 -> 3 -> 4 -> 5
-    ListNode* head = new ListNode(1);
-    head->next = new ListNode(2);
-    head->next->next = new ListNode(3);
-    head->next->next->next = new ListNode(4);
-    head->next->next->next->next = new ListNode(5);
-
-    cout << "Before reversing even nodes: ";
-    printList(head);
-
-    head = reverseEvenNodes(head);
-
-    cout << "After reversing even nodes: ";
-    printList(head);
-
-    return 0;
-}
