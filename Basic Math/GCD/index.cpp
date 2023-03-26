@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+//52,36 gcd is 4
 int gcd(int a, int b) {
 
     if(a==0)
