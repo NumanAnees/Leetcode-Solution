@@ -1,4 +1,4 @@
-# Interview Preparation
+# DSA with C++
 
 Contains practice questions of Data Structures, Algorithms and SQL for Interview Preparation from [Leetcode](https://leetcode.com/), [GFG](https://www.geeksforgeeks.org/) and [codeStudio](https://www.codingninjas.com/codestudio).
 
