@@ -22,3 +22,16 @@ public:
         }
      }
 };
+//------------------------Real------------------------
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        if ((root -> val > p -> val) && (root -> val > q -> val)) {
+            return lowestCommonAncestor(root -> left, p, q); //dono bary move left
+        }
+        if ((root -> val < p -> val) && (root -> val < q -> val)) {
+            return lowestCommonAncestor(root -> right, p, q); //dono chooty move right
+        }
+        return root; //in range return root
+    }
+};
